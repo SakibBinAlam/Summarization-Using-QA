@@ -10,3 +10,8 @@ We created a simple web application to implement the system.
 
 ## Demo of the system
 ![Home Page](https://github.com/SakibBinAlam/Summarization-Using-QA/blob/main/op1.png)
+
+## Contributors
+- [Md. Sakib Bin Alam](https://github.com/SakibBinAlam)
+- [Aiman Lameesa](https://github.com/aimanlameesa)
+- Pratyush Pokharel
