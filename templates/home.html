@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<title><b>Summary Generator</b></title>
+{% endblock %}
+
+{% block content %}
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: #E6E6FA;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .input-area {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        textarea[name="name"] {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            resize: none;
+        }
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+        hr {
+            border: 1px solid #ddd;
+            margin: 20px 0;
+        }
+        .output-area {
+            width: 100%;
+            margin-bottom: 20px;
+            vertical-align: middle;
+            text-align: center;
+        }
+        textarea[name="source"], textarea[name="qa"], textarea[name="code"] {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            border-radius: 5px;
+            margin-right: 50px;
+            margin-bottom: 20px;
+            vertical-align: middle;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Summary Generator</h1>
+
+        <br>
+
+        <div class="input-area">
+            <form action="" method="POST">
+                <label><b><h5>Please Enter Your Article:</h5></b></label>
+                
+                {{ form.csrf_token }}
+                {{ form.name(cols=100) }}
+
+                <button type="submit">Generate Summary</button>
+            </form>
+        </div>
+
+        {% if name %}
+        <hr>
+        <div class="output-area">
+
+            <label><b><h5>Source Article</h5></b></label> 
+            
+            <br>
+
+            <textarea rows="5" cols="170">{{ name }}</textarea>
+
+            <br>
+
+            <label><b><h5>Generated QA</h5></b></label> <br>
+            <textarea rows="5" cols="170">{{ qa }}</textarea>
+
+            <br>
+
+            <label><b><h5>Generated Summary</h5></b></label> <br>
+            <textarea rows="5" cols="170">{{ code }}</textarea>
+
+        </div>
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>
+{% endblock %}
