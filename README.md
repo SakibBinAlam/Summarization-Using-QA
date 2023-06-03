@@ -13,4 +13,3 @@ We created a simple web application to implement the system.
 ## Contributors
 - [Md. Sakib Bin Alam](https://github.com/SakibBinAlam)
 - [Aiman Lameesa](https://github.com/aimanlameesa)
-- Pratyush Pokharel
